@@ -1,0 +1,10 @@
+#include<stdio.h>
+%}
+%token KWORD ID
+%%
+start: KWORD  X ';' {printf("Valid Declaration");return 0;}
+    ;
+X: X ',' X
+| ID
+;
+%%
